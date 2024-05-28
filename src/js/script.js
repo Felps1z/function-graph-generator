@@ -1,4 +1,4 @@
-const ctx = document.getElementById('graphic');
+const ctx = document.getElementById('graph');
 
 document.querySelector('form').addEventListener('submit', (event) => {
     event.preventDefault();
@@ -23,33 +23,65 @@ document.querySelector('form').addEventListener('submit', (event) => {
     function gerarPontos(a, b, c, xMin, xMax, passo) {
         let pontos = [];
         for (let x = xMin; x <= xMax; x += passo) {
-            let y = a * x * x + b * x + c; //equação quadrática p/ descobrir o valor de y
+            let y = a * x * x + b * x + c; //equacao quadratica
             pontos.push({ x: x, y: y });
         }
         return pontos;
     }
 
-    const pontos = gerarPontos(a, b, c, -10, 10, 1);
+    const pontos = gerarPontos(a, b, c, -10, 10, 2);
+
+    // Pontos específicos: raízes e vértice
+    const pontosEspecificos = [
+        { x: coeficiente1, y: 0 },
+        { x: coeficiente2, y: 0 },
+        { x: tempo, y: xftempo }
+    ];
 
     new Chart(ctx, {
         type: 'scatter',
         data: {
-            datasets: [{
-                label: `y = ${a}x² + ${b}x + ${c}`,
-                data: pontos,
-                borderColor: 'rgba(75, 192, 192, 1)',
-                fill: false,
-                showLine: true,
-                tension: 0.4
-            }]
+            datasets: [
+                {
+                    label: `f(x) = ${a}x² + ${b}x + ${c}`,
+                    data: pontos,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    fill: false,
+                    showLine: true,
+                    tension: 0.4
+                },
+                {
+                    label: 'Pontos Específicos',
+                    data: pontosEspecificos,
+                    backgroundColor: 'red',
+                    pointRadius: 5,
+                    pointBackgroundColor: 'red',
+                    showLine: false
+                }
+            ]
         },
         options: {
             scales: {
                 x: {
                     type: 'linear',
-                    position: 'bottom'
+                    position: 'bottom',
+                    grid: {
+                        zeroLineColor: 'rgba(0,0,0,1)',
+                        zeroLineWidth: 2,
+                        color: function(context) {
+                            return context.tick.value === 0 ? '#000' : '#e0e0e0';
+                        }
+                    },
+                    beginAtZero: true
                 },
                 y: {
+                    grid: {
+                        zeroLineColor: 'rgba(0,0,0,1)',
+                        zeroLineWidth: 2,
+                        color: function(context) {
+                            return context.tick.value === 0 ? '#000' : '#e0e0e0';
+                        }
+                    },
                     beginAtZero: false,
                     suggestedMin: Math.min(...pontos.map(p => p.y)) - 5,
                     suggestedMax: Math.max(...pontos.map(p => p.y)) + 5

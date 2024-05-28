@@ -5,25 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gráfico de Função Quadrática</title>
+    <link rel="shortcut icon" href="src/img/icon-graph.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="src/styles/styles.css">
+    <link rel="stylesheet" href="src/styles/vars.css">
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+    <header>
+        <img src="src/img/functionGraphGenerator.svg" alt="Logo Function Graph Generator Colorida em">
+        <i class="fa-solid fa-gear" style="color: #777777"></i>
+    </header>
 
-    <form action="">
-        V(t) = 
-        <input type="number" placeholder="1,2,3...">
-        +
-        <input type="number" placeholder="1,2,3...">
-        t + 
-        <input type="number" placeholder="1,2,3...">
-        t²
-        <button type="submit">Enviar</button>
-    </form>
-    <div id="dados"></div>
+    <main>
+        <form>
+            <div class="form-area">
+                <input type="text" placeholder="f(x) = 2 + 5x + x²"/>
+                <button type="submit"><i class="fa-solid fa-check"></i></button>
+            </div>
+        </form>
+        <!-- <div id="dados"></div> -->
+        <div class="graph__group">
+            <div class="graph__loader">
+                <svg viewBox="0 0 240 240" height="240" width="240" class="loader">
+                    <circle stroke-linecap="round" stroke-dashoffset="-330" stroke-dasharray="0 660" stroke-width="20"
+                        stroke="#000" fill="none" r="105" cy="120" cx="120" class="loader-ring loader-ring-a"></circle>
+                    <circle stroke-linecap="round" stroke-dashoffset="-110" stroke-dasharray="0 220" stroke-width="20"
+                        stroke="#000" fill="none" r="35" cy="120" cx="120" class="loader-ring loader-ring-b"></circle>
+                    <circle stroke-linecap="round" stroke-dasharray="0 440" stroke-width="20" stroke="#000" fill="none"
+                        r="70" cy="120" cx="85" class="loader-ring loader-ring-c"></circle>
+                    <circle stroke-linecap="round" stroke-dasharray="0 440" stroke-width="20" stroke="#000" fill="none"
+                        r="70" cy="120" cx="155" class="loader-ring loader-ring-d"></circle>
+                </svg>
+                <p class="graph__message">Waiting for you to type</p>
+            </div>
+            <canvas id="graph"></canvas>
+        </div>
+    </main>
 
-    <canvas id="graphic"></canvas>
+    <footer>
+        <p>© 2024 Felipe dos Santos</p>
+
+        <div>
+            <p>How to use</p>
+            <p>Privacy Polite</p>
+            <p>FAQS</p>
+        </div>
+    </footer>
 
     <script src="src/js/script.js"></script>
 </body>
