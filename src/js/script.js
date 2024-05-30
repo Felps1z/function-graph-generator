@@ -45,17 +45,15 @@ document.querySelector('form').addEventListener('submit', (event) => {
                 {
                     label: `f(x) = ${a}x² + ${b}x + ${c}`,
                     data: pontos,
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    fill: false,
+                    borderColor: 'rgba(255, 255, 255, 0.85)',
                     showLine: true,
                     tension: 0.4
                 },
                 {
                     label: 'Pontos Específicos',
                     data: pontosEspecificos,
-                    backgroundColor: 'red',
-                    pointRadius: 5,
-                    pointBackgroundColor: 'red',
+                    pointRadius: 6,
+                    pointBackgroundColor: '#4361EE',
                     showLine: false
                 }
             ]
@@ -69,7 +67,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
                         zeroLineColor: 'rgba(0,0,0,1)',
                         zeroLineWidth: 2,
                         color: function(context) {
-                            return context.tick.value === 0 ? '#000' : '#e0e0e0';
+                            return context.tick.value === 0 ? '#fff' : '#777777';
                         }
                     },
                     beginAtZero: true
@@ -79,7 +77,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
                         zeroLineColor: 'rgba(0,0,0,1)',
                         zeroLineWidth: 2,
                         color: function(context) {
-                            return context.tick.value === 0 ? '#000' : '#e0e0e0';
+                            return context.tick.value === 0 ? '#fff' : '#777777';
                         }
                     },
                     beginAtZero: false,
