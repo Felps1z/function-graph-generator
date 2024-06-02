@@ -19,20 +19,24 @@
 
 <body>
     <header>
-        <img src="src/img/functionGraphGenerator.svg" alt="Logo 'Function Graph Generator' colorida em roxo, rosa e azul">
-        <button><i class="fa-solid fa-gear" style="color: #777777"></i></button>
+        <img src="src/img/fgg.svg"
+            alt="Logo 'Function Graph Generator' colorida em roxo, rosa e azul">
+        <div>
+            <button title="How to use"><i class="fa-solid fa-circle-question" style="color: #777777"></i></button>
+            <button title="Settings"><i class="fa-solid fa-gear" style="color: #777777"></i></button>
+        </div>
     </header>
 
     <main>
         <form>
             <div class="form-area">
-                <input type="text" placeholder="f(x) = 2 + 5x + x²" required/>
-                <button type="submit" title="Criar gráfico"><i class="fa-solid fa-check"></i></button>
+                <input type="text" placeholder="Type your function" required />
+                <button type="submit" title="Create graph"><i class="fa-solid fa-check"></i></button>
             </div>
         </form>
         <div class="graph__group">
-            <canvas id="graph"></canvas>
             <div id="dados"></div>
+            <canvas id="graph"></canvas>
         </div>
     </main>
 
@@ -40,7 +44,6 @@
         <p>© 2024 Felipe dos Santos</p>
 
         <div>
-            <p>How to use</p>
             <p>Privacy Polite</p>
             <p>FAQS</p>
         </div>

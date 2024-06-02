@@ -25,11 +25,11 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 20dvh;
+    height: 17dvh;
 }
 
 header img{
-    height: 10dvh;
+    height: 8dvh;
 }
 
 header button {
@@ -42,23 +42,27 @@ header button i {
     font-size: 32px;
 }
 
+header button:nth-child(2){
+    margin-left: 20px;
+}
+
 /* FIM HEADER */
 
 /* MAIN */
 
 main {
     width: 100%;
-    height: 70dvh;
+    height: 73dvh;
 }
 
 form {
-    height: 18%;
+    height: 16%;
 }
 
 .form-area {
     background-color: var(--secundary-color);
     height: 100%;
-    border-radius: 25px;
+    border-radius: 20px;
     padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
@@ -68,7 +72,8 @@ form {
 .form-area input {
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 1rem;
+    font-weight: 500;
     color: var(--white);
     outline: none;
     height: 100%;
@@ -79,8 +84,8 @@ form {
     background: var(--purple);
     border: none;
     border-radius: 50%;
-    width: 42px;
-    height: 42px;
+    width: 37px;
+    height: 37px;
     cursor: pointer;
 }
 
@@ -96,25 +101,31 @@ form {
 
 .graph__group{
     display: flex;
-    gap: 24px;
-    height: 82%;
-    padding-top: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: 84%;
 }
 
 canvas {
-    max-height: 55dvh;
-    max-width: 55dvw;
+    max-height: 50dvh;
+    max-width: 60dvw;
 }
 
 #dados{
-    margin-top: 2rem;
+    margin-top: 1rem;
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: row;
+    gap: 24px;
 }
 
 #dados p{
     color: var(--white);
+}
+
+#dados p span{
+    color: var(--pink);
 }
 
 /* FIM MAIN */

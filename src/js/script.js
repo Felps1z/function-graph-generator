@@ -50,7 +50,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
                     tension: 0.4
                 },
                 {
-                    label: 'Pontos Específicos',
+                    label: 'Specific Points',
                     data: pontosEspecificos,
                     pointRadius: 6,
                     pointBackgroundColor: '#4361EE',
@@ -67,7 +67,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
                         zeroLineColor: 'rgba(0,0,0,1)',
                         zeroLineWidth: 2,
                         color: function(context) {
-                            return context.tick.value === 0 ? '#fff' : '#777777';
+                            return context.tick.value === 0 ? '#fff' : '#404040';
                         }
                     },
                     beginAtZero: true
@@ -77,7 +77,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
                         zeroLineColor: 'rgba(0,0,0,1)',
                         zeroLineWidth: 2,
                         color: function(context) {
-                            return context.tick.value === 0 ? '#fff' : '#777777';
+                            return context.tick.value === 0 ? '#fff' : '#404040';
                         }
                     },
                     beginAtZero: false,
@@ -91,14 +91,14 @@ document.querySelector('form').addEventListener('submit', (event) => {
     const dados = document.querySelector('#dados');
     dados.innerHTML = ''; // Limpa dados antigos
 
-    function createElementP(msg) {
-        const p = document.createElement('p');
-        p.innerHTML = msg;
-        return p;
+    function createElement(el, msg) {
+        const element = document.createElement(el);
+        element.innerHTML = msg;
+        return element;
     }
 
-    dados.appendChild(createElementP(`Coeficiente 1: ${coeficiente1.toFixed(2)}`));
-    dados.appendChild(createElementP(`Coeficiente 2: ${coeficiente2.toFixed(2)}`));
-    dados.appendChild(createElementP(`Tempo do ponto mínimo: ${tempo.toFixed(2)}`));
-    dados.appendChild(createElementP(`X em relação ao tempo do ponto mínimo: ${xftempo.toFixed(2)}`));
+    dados.appendChild(createElement('p', `x': <span>${coeficiente1.toFixed(2)}m</span>`));
+    dados.appendChild(createElement('p', `x'': <span>${coeficiente2.toFixed(2)}m</span>`));
+    dados.appendChild(createElement('p', `Time: <span>${tempo.toFixed(2)}s</span>`));
+    dados.appendChild(createElement('p', `Minimum point: <span>${xftempo.toFixed(2)}s</span>`));
 });
